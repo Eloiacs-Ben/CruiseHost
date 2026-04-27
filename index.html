@@ -515,7 +515,7 @@
     }
 
 
-   /* Premium 3x3 Cruise Grid Design */
+  /* Premium 3x3 Cruise Grid Design - Highlighted Top Price Edition */
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
     .cc-widget--panel {
@@ -533,77 +533,85 @@
         padding: 0 20px !important;
     }
 
-    /* Trip Box - Luxury Card Styling */
     .lp_trip_box {
         background-size: cover !important;
         background-position: center !important;
-        height: 480px !important;
-        border-radius: 24px !important;
-        position: relative !important;
+        height: 520px !important;
+        border-radius: 28px !important;
         overflow: hidden !important;
+        position: relative !important;
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
 
-    /* Overlay Gradient for Text Readability */
+    /* Elegant Overlay for Content Legibility */
     .lp_trip_box::before {
         content: '' !important;
         position: absolute !important;
         inset: 0 !important;
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, 0.95) 100%) !important;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.9) 100%) !important;
         z-index: 1 !important;
-        transition: opacity 0.3s ease !important;
     }
 
     .lp_trip_box a {
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-end !important;
         height: 100% !important;
         width: 100% !important;
         text-decoration: none !important;
         color: #ffffff !important;
-        padding: 32px !important;
-        box-sizing: border-box !important;
         position: relative !important;
         z-index: 2 !important;
+        box-sizing: border-box !important;
     }
 
-    /* Hover State Animation */
-    .lp_trip_box:hover {
-        transform: translateY(-12px) !important;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    /* Price Section - Highlighted Top Banner */
+    .lp_trip_box .price {
+        order: -1 !important;
+        background: #FACC15 !important; /* Bright Golden Yellow */
+        color: #0F172A !important;
+        padding: 24px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-weight: 700 !important;
+        font-size: 12px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.1em !important;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 82%) !important;
+        transition: background 0.3s ease !important;
     }
 
-    .lp_trip_box:hover::before {
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.95) 100%) !important;
+    .lp_trip_box .price span {
+        display: block !important;
+        font-size: 36px !important;
+        font-weight: 800 !important;
+        line-height: 1 !important;
+        margin: 4px 0 !important;
+        color: #0F172A !important;
     }
 
-    /* Headline - Badge Style */
+    /* Trip Identity - Pushed to the Bottom */
     .lp_trip_box .headline {
-        margin-bottom: auto !important;
+        margin-top: auto !important;
+        padding: 0 24px 8px 24px !important;
     }
 
     .lp_trip_box .headline span {
-        font-size: 14px !important;
+        font-size: 13px !important;
         font-weight: 700 !important;
+        color: #FACC15 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.1em !important;
-        background: #3B82F6 !important;
-        color: #ffffff !important;
-        padding: 6px 14px !important;
-        border-radius: 50px !important;
-        display: inline-block !important;
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+        letter-spacing: 0.15em !important;
     }
 
     /* Trip Details */
     .lp_trip_box .text {
-        margin-top: 20px !important;
+        padding: 0 24px 32px 24px !important;
     }
 
     .lp_trip_box .text div {
-        font-size: 22px !important;
+        font-size: 24px !important;
         font-weight: 700 !important;
         line-height: 1.2 !important;
         color: #ffffff !important;
@@ -611,37 +619,28 @@
     }
 
     .lp_trip_box .period {
+        font-size: 15px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        font-weight: 500 !important;
         display: flex !important;
         align-items: center !important;
-        gap: 6px !important;
-        font-size: 14px !important;
-        color: #94A3B8 !important;
-        font-weight: 500 !important;
+        gap: 8px !important;
     }
 
     .lp_trip_box .period::before {
         content: '📅' !important;
-        font-size: 12px !important;
-    }
-
-    /* Price Section */
-    .lp_trip_box .price {
-        margin-top: 20px !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
-        padding-top: 20px !important;
         font-size: 14px !important;
-        color: #CBD5E1 !important;
-        font-weight: 500 !important;
+        opacity: 0.8 !important;
     }
 
-    .lp_trip_box .price span {
-        font-size: 36px !important;
-        font-weight: 800 !important;
-        color: #ffffff !important;
-        display: inline-block !important;
-        margin-top: 4px !important;
-        vertical-align: middle !important;
-        margin-left: 5px !important;
+    /* Interactive Hover State */
+    .lp_trip_box:hover {
+        transform: translateY(-12px) !important;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .lp_trip_box:hover .price {
+        background: #FFD700 !important; /* Brighter gold on hover */
     }
 
     /* Grid Layout Responsive Optimization */
@@ -660,7 +659,7 @@
             padding: 40px 0 !important;
         }
         .lp_trip_box {
-            height: 400px !important;
+            height: 480px !important;
         }
     }
 /* popular place heading*/
