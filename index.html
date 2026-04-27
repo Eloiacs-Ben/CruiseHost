@@ -1,67 +1,141 @@
-<div id="main-header">
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <div class="container">
-      <span>📞 +91 98765 43210</span>
-      <span>✉ info@yourdomain.com</span>
-    </div>
+/* TOP BAR */
+.top-bar {
+  background: #0b1a2c;
+  color: white;
+  font-size: 12px;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* NAVBAR */
+.navbar {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo a {
+  font-size: 22px;
+  font-weight: bold;
+  color: #F58633;
+  text-decoration: none;
+}
+
+/* MENU */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+/* SUBMENU */
+.submenu {
+  display: none;
+  position: absolute;
+  background: white;
+  top: 100%;
+  left: 0;
+  padding: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.menu li:hover .submenu {
+  display: block;
+}
+
+/* BUTTON */
+.btn {
+  background: #50CAF2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .menu {
+    display: none;
+  }
+}
+</style>
+
+<div class="top-bar">
+  <span>📞 +91 98765 43210</span>
+  <span>✉ info@yourdomain.com</span>
+</div>
+
+<div class="navbar">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <a href="https://yourdomain.com">MyCruise</a>
   </div>
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="container nav-flex">
-      
-      <!-- LOGO -->
-      <div class="logo">
-        <a href="https://yourdomain.com">MyCruise</a>
-      </div>
+  <!-- MENU -->
+  <ul class="menu">
 
-      <!-- MENU -->
-      <ul class="menu">
+    <li name="##H1name##">
+      <a href="##H1link##">##H1text##</a>
+    </li>
 
-        <li name="##H1name##">
-          <a href="##H1link##">##H1text##</a>
+    <li name="##H2name##">
+      <a href="##H2link##">##H2text##</a>
+      <ul class="submenu">
+        <!-- begin:H2 -->
+        <li>
+          <a href="##H2Sublink##">##H2Subtext##</a>
         </li>
-
-        <li name="##H2name##">
-          <a href="##H2link##">##H2text##</a>
-          <ul class="submenu">
-            <!-- begin:H2 -->
-            <li>
-              <a href="##H2Sublink##">##H2Subtext##</a>
-            </li>
-            <!-- end:H2 -->
-          </ul>
-        </li>
-
-        <li name="##H3name##">
-          <a href="##H3link##">##H3text##</a>
-          <ul class="submenu">
-            <!-- begin:H3 -->
-            <li>
-              <a href="##H3Sublink##">##H3Subtext##</a>
-            </li>
-            <!-- end:H3 -->
-          </ul>
-        </li>
-
-        <li name="##H4name##">
-          <a href="##H4link##">##H4text##</a>
-        </li>
-
-        <li name="##H5name##">
-          <a href="##H5link##">##H5text##</a>
-        </li>
-
+        <!-- end:H2 -->
       </ul>
+    </li>
 
-      <!-- CTA BUTTON -->
-      <div class="cta">
-        <a href="##H6link##" class="btn">##H6text##</a>
-      </div>
+    <li name="##H3name##">
+      <a href="##H3link##">##H3text##</a>
+      <ul class="submenu">
+        <!-- begin:H3 -->
+        <li>
+          <a href="##H3Sublink##">##H3Subtext##</a>
+        </li>
+        <!-- end:H3 -->
+      </ul>
+    </li>
 
-    </div>
-  </div>
+    <li name="##H4name##">
+      <a href="##H4link##">##H4text##</a>
+    </li>
+
+    <li name="##H5name##">
+      <a href="##H5link##">##H5text##</a>
+    </li>
+
+  </ul>
+
+  <!-- BUTTON -->
+  <a href="##H6link##" class="btn">##H6text##</a>
 
 </div>
