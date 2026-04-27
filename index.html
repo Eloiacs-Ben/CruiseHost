@@ -315,7 +315,133 @@
         font-weight: 600 !important;
         color: var(--ds-neutral-900) !important;
     }
-  
+
+   /* Premium Slider Design System Integration */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+        --sl-primary: #D4AF37 !important;
+        --sl-primary-hover: #C9A227 !important;
+        --sl-neutral-100: #F8F9FA !important;
+        --sl-neutral-200: #E9ECEF !important;
+        --sl-neutral-300: #DEE2E6 !important;
+        --sl-neutral-800: #343A40 !important;
+        --sl-shadow-lg: 0 20px 40px rgba(0,0,0,0.15) !important;
+        --sl-radius-lg: 24px !important;
+        --sl-transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    }
+
+    /* Container Styling */
+    .cc-widget--carousel {
+        background-color: var(--sl-neutral-100) !important;
+        padding: 60px 0 !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+
+    .swiper {
+        padding: 40px 10px 80px !important;
+        overflow: visible !important;
+    }
+
+    /* Slider Box - Card Styling */
+    .lp_slider_box {
+        height: 500px !important;
+        background-size: cover !important;
+        background-position: center !important;
+        border-radius: var(--sl-radius-lg) !important;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.06) !important;
+        transition: var(--sl-transition) !important;
+        cursor: pointer !important;
+        position: relative !important;
+        overflow: hidden !important;
+        border: 2px solid transparent !important;
+    }
+
+    /* Elegant Overlay Gradient */
+    .lp_slider_box::before {
+        content: '' !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%) !important;
+        z-index: 1 !important;
+        opacity: 0.8 !important;
+        transition: opacity 0.3s !important;
+    }
+
+    /* Hover & Active States */
+    .lp_slider_box:hover {
+        transform: translateY(-15px) !important;
+        box-shadow: var(--sl-shadow-lg) !important;
+    }
+
+    .lp_slider_box:hover::before {
+        opacity: 0.5 !important;
+    }
+
+    .swiper-slide-active .lp_slider_box {
+        transform: scale(1.08) !important;
+        box-shadow: var(--sl-shadow-lg) !important;
+        border-color: var(--sl-primary) !important;
+        z-index: 10 !important;
+    }
+
+    /* Swiper Navigation Buttons - Premium Gold */
+    .swiper-button-next, .swiper-button-prev {
+        width: 60px !important;
+        height: 60px !important;
+        background: #ffffff !important;
+        color: var(--sl-primary) !important;
+        border-radius: 50% !important;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1) !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid var(--sl-neutral-200) !important;
+    }
+
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+        background: var(--sl-primary) !important;
+        color: #ffffff !important;
+        transform: scale(1.1) !important;
+        box-shadow: 0 10px 25px rgba(212,175,55,0.3) !important;
+    }
+
+    .swiper-button-next::after, .swiper-button-prev::after {
+        font-size: 22px !important;
+        font-weight: 900 !important;
+    }
+
+    /* Pagination - Modern Pill Style */
+    .swiper-pagination {
+        bottom: 20px !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 16px !important;
+        height: 6px !important;
+        background: var(--sl-primary) !important;
+        opacity: 0.25 !important;
+        border-radius: 4px !important;
+        transition: all 0.4s ease !important;
+        margin: 0 6px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 45px !important;
+        opacity: 1 !important;
+        background: var(--sl-primary) !important;
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 800px) {
+        .lp_slider_box {
+            height: 380px !important;
+        }
+        .cc-widget--carousel {
+            padding: 30px 0 !important;
+        }
+        .swiper {
+            padding: 20px 5px 60px !important;
+        }
+    }
     </style>
 
 
