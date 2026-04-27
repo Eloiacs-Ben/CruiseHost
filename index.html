@@ -515,7 +515,7 @@
     }
 
 
-  /* Premium 3x3 Cruise Grid Design - Highlighted Top Price Edition */
+/* Premium 3x3 Cruise Grid Design - Highlighted Top Price Edition */
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
     .cc-widget--panel {
@@ -661,6 +661,10 @@
         .lp_trip_box {
             height: 480px !important;
         }
+    }
+    /* Override any external absolute positioning on the price section */
+    #cc .lp_trip_box div[class^="price"] {
+        position: relative !important;
     }
 /* popular place heading*/
    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
