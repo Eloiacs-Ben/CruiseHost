@@ -442,6 +442,147 @@
             padding: 20px 5px 60px !important;
         }
     }
+
+
+  /* Premium Cruise Grid Design System Integration */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+        --grid-primary: #D4AF37 !important;
+        --grid-primary-bright: #FFD700 !important;
+        --grid-neutral-100: #F8F9FA !important;
+        --grid-neutral-200: #E9ECEF !important;
+        --grid-neutral-800: #343A40 !important;
+        --grid-shadow: 0 12px 30px rgba(0,0,0,0.15) !important;
+        --grid-radius: 20px !important;
+        --grid-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    }
+
+    /* Container Styling */
+    .cc-widget--panel {
+        background-color: var(--grid-neutral-100) !important;
+        padding: 60px 0 !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+
+    .lp_trip {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 30px !important;
+        justify-content: center !important;
+        margin-bottom: 30px !important;
+        max-width: 1200px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Trip Box - Luxury Tile Styling */
+    .lp_trip_box {
+        flex: 1 1 360px !important;
+        max-width: 380px !important;
+        height: 420px !important;
+        background-size: cover !important;
+        background-position: center !important;
+        border-radius: var(--grid-radius) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: var(--grid-transition) !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
+    }
+
+    .lp_trip_box a {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        height: 100% !important;
+        width: 100% !important;
+        text-decoration: none !important;
+        color: #ffffff !important;
+        padding: 30px !important;
+        box-sizing: border-box !important;
+        background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%) !important;
+        z-index: 2 !important;
+    }
+
+    /* Hover State */
+    .lp_trip_box:hover {
+        transform: translateY(-12px) scale(1.02) !important;
+        box-shadow: var(--grid-shadow) !important;
+    }
+
+    .lp_trip_box:hover a {
+        background: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.85) 100%) !important;
+    }
+
+    /* Headline - Company Name */
+    .lp_trip_box .headline {
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        margin-bottom: auto !important;
+    }
+
+    .lp_trip_box .headline span {
+        border-left: 4px solid var(--grid-primary) !important;
+        padding-left: 15px !important;
+        display: inline-block !important;
+    }
+
+    /* Description and Period */
+    .lp_trip_box .text {
+        margin-bottom: 20px !important;
+    }
+
+    .lp_trip_box .text div {
+        font-size: 17px !important;
+        font-weight: 500 !important;
+        line-height: 1.4 !important;
+        color: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    .lp_trip_box .period {
+        display: block !important;
+        font-size: 14px !important;
+        margin-top: 8px !important;
+        color: var(--grid-primary-bright) !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Price Section */
+    .lp_trip_box .price {
+        font-size: 14px !important;
+        text-align: right !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .lp_trip_box .price span {
+        font-size: 38px !important;
+        font-weight: 700 !important;
+        color: var(--grid-primary) !important;
+        display: block !important;
+        margin: 5px 0 !important;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+    }
+
+    /* Grid Layout Mobile Optimization */
+    @media (max-width: 850px) {
+        .lp_trip_box {
+            flex: 1 1 100% !important;
+            max-width: 100% !important;
+            height: 320px !important;
+        }
+        .cc-widget--panel {
+            padding: 30px 15px !important;
+        }
+        .lp_trip {
+            gap: 20px !important;
+        }
+    }
     </style>
 
 
