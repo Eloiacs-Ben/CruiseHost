@@ -583,6 +583,96 @@
             gap: 20px !important;
         }
     }
+
+
+   /* Popular Places Heading Styles */
+    .cc-widget--content.popular-places-header {
+        padding: 60px 0 20px !important;
+        background: transparent !important;
+        overflow: hidden;
+    }
+
+    .popular-places-header .textbox {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .popular-places-header h2 {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--neutral-900);
+        margin: 0;
+        padding-bottom: 10px;
+        letter-spacing: -1px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .popular-places-header h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--primary-bright));
+        border-radius: 2px;
+        transition: var(--transition);
+    }
+
+    .popular-places-header:hover h2::after {
+        width: 100px;
+    }
+
+    .popular-places-header p {
+        margin-top: 15px;
+        font-family: var(--font-main);
+        font-size: 1.1rem;
+        color: var(--neutral-700);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        opacity: 0.8;
+    }
+
+    .popular-places-header p span {
+        position: relative;
+    }
+
+    /* Animation on load */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .popular-places-header .textbox h2,
+    .popular-places-header .textbox p {
+        animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    .popular-places-header .textbox p {
+        animation-delay: 0.2s;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .popular-places-header h2 {
+            font-size: 2.2rem;
+        }
+        .popular-places-header p {
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+        }
+    }
     </style>
 
 
