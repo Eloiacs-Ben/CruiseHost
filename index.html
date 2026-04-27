@@ -76,7 +76,174 @@
   text-decoration: none;
 }
 
- 
+ /*Search widegry*/
+  #cc_lay_an {
+        background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%) !important;
+        font-family: 'Montserrat', sans-serif !important;
+        padding: 40px !important;
+        border-radius: 30px !important;
+        color: #ffffff !important;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+        max-width: 1200px !important;
+        margin: 20px auto !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .lay_01 h2 {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 3.5rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 6px !important;
+        color: #d4af37 !important;
+        text-align: center !important;
+        margin-bottom: 50px !important;
+        text-shadow: 3px 3px 6px rgba(0,0,0,0.4) !important;
+    }
+
+    .searchbutton {
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 12px !important;
+        height: 60px !important;
+        font-size: 1.1rem !important;
+        font-weight: 400 !important;
+        padding: 0 25px !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        cursor: pointer !important;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+
+    .searchbutton:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: #d4af37 !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.2) !important;
+    }
+
+    .searchlist {
+        background: #0f172a !important;
+        border: 1px solid rgba(212, 175, 55, 0.3) !important;
+        border-radius: 16px !important;
+        padding: 25px !important;
+        margin-top: 10px !important;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important;
+        z-index: 9999 !important;
+    }
+
+    .btnSearch {
+        background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%) !important;
+        color: #020c1b !important;
+        border: none !important;
+        border-radius: 15px !important;
+        height: 70px !important;
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 3px !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        margin-top: 40px !important;
+        width: 100% !important;
+        box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3) !important;
+    }
+
+    .btnSearch:hover {
+        transform: scale(1.02) !important;
+        box-shadow: 0 20px 40px rgba(212, 175, 55, 0.5) !important;
+        filter: brightness(1.1) !important;
+    }
+
+    .btnSearch:disabled {
+        background: #334155 !important;
+        color: #94a3b8 !important;
+        cursor: not-allowed !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    .radio-custom-label, .checkbox-custom-label {
+        color: #cbd5e1 !important;
+        font-size: 1.1rem !important;
+        margin-right: 30px !important;
+        cursor: pointer !important;
+        padding-left: 10px !important;
+        transition: color 0.3s !important;
+    }
+
+    input[type="radio"]:checked + .radio-custom-label,
+    input[type="checkbox"]:checked + .checkbox-custom-label {
+        color: #d4af37 !important;
+        font-weight: 600 !important;
+    }
+
+    .helperButton {
+        background: transparent !important;
+        color: #d4af37 !important;
+        border: 1.5px solid #d4af37 !important;
+        border-radius: 8px !important;
+        padding: 8px 20px !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        font-size: 0.8rem !important;
+        transition: all 0.3s !important;
+        cursor: pointer !important;
+    }
+
+    .helperButton:hover {
+        background: #d4af37 !important;
+        color: #020c1b !important;
+    }
+
+    .search_headline label {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        font-size: 1.2rem !important;
+        border-left: 3px solid #d4af37 !important;
+        padding-left: 15px !important;
+        margin: 15px 0 !important;
+        display: block !important;
+    }
+
+    .search_subline {
+        padding-left: 30px !important;
+        margin: 8px 0 !important;
+    }
+
+    .search_subline label {
+        color: #94a3b8 !important;
+        font-size: 1rem !important;
+    }
+
+    .lay_floatleft {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 25px !important;
+        justify-content: space-between !important;
+    }
+
+    .searchdiv {
+        flex: 1 1 300px !important;
+    }
+
+    /* Datepicker styling overrides */
+    .datepicker {
+        background: #0f172a !important;
+        border: 1px solid rgba(212, 175, 55, 0.3) !important;
+        color: #ffffff !important;
+        border-radius: 12px !important;
+        font-family: 'Montserrat', sans-serif !important;
+    }
+
+    .datepicker--cell.-selected- {
+        background: #d4af37 !important;
+        color: #020c1b !important;
+    }
+
+    .datepicker--nav-title, .datepicker--day-name {
+        color: #d4af37 !important;
+    }
     </style>
 
 
