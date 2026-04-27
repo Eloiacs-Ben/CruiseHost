@@ -515,7 +515,7 @@
     }
 
 
-/* Premium 3x3 Cruise Grid Design - Highlighted Top Price Edition */
+* Premium 3x3 Cruise Grid Design - Highlighted Top Price Edition */
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
     .cc-widget--panel {
@@ -539,7 +539,7 @@
         height: 520px !important;
         border-radius: 28px !important;
         overflow: hidden !important;
-        
+        position: relative !important;
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
         box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1) !important;
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -548,7 +548,7 @@
     /* Elegant Overlay for Content Legibility */
     .lp_trip_box::before {
         content: '' !important;
-        
+        position: absolute !important;
         inset: 0 !important;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.9) 100%) !important;
         z-index: 1 !important;
@@ -569,7 +569,8 @@
     /* Price Section - Highlighted Top Banner */
     .lp_trip_box .price {
         order: -1 !important;
-        background: #FACC15 !important; /* Bright Golden Yellow */
+        background: #FACC15 !important;
+        /* Bright Golden Yellow */
         color: #0F172A !important;
         padding: 24px !important;
         width: 100% !important;
@@ -640,7 +641,8 @@
     }
 
     .lp_trip_box:hover .price {
-        background: #FFD700 !important; /* Brighter gold on hover */
+        background: #FFD700 !important;
+        /* Brighter gold on hover */
     }
 
     /* Grid Layout Responsive Optimization */
@@ -655,14 +657,21 @@
             grid-template-columns: 1fr !important;
             padding: 0 15px !important;
         }
+
         .cc-widget--panel {
             padding: 40px 0 !important;
         }
+
         .lp_trip_box {
             height: 480px !important;
         }
     }
-    /* Override any external absolute positioning on the price section */
+
+    /* Explicitly remove absolute positioning from all price sections */
+    #cc .lp_trip_box div[class^="price"], 
+    #cc .lp_double_box div[class^="price"] {
+        position: relative !important;
+    }
     
 /* popular place heading*/
    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
