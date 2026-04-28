@@ -1,162 +1,131 @@
 <style>
-/* ============================================================
-   CRUISE DESIGN SYSTEM — Unified Global Stylesheet
-   Modern, clean, consistent across all components
-   All rules use !important to override platform defaults
-   ============================================================ */
+/* ================================================================
+   KARAVAN CRUISES — Design System
+   Matching reference: clean white/blue travel site
+   Zero class name changes · All !important overrides
+   ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800;900&display=swap');
 
-/* ============================================================
-   1. DESIGN TOKENS — CSS Custom Properties
-   ============================================================ */
+/* ================================================================
+   TOKENS
+   ================================================================ */
 :root {
-    /* Brand Colors */
-    --c-navy:        #0F172A !important;
-    --c-navy-mid:    #1E293B !important;
-    --c-navy-light:  #334155 !important;
-    --c-blue:        #2563EB !important;
-    --c-blue-light:  #3B82F6 !important;
-    --c-blue-pale:   #EFF6FF !important;
-    --c-gold:        #F59E0B !important;
-    --c-gold-light:  #FCD34D !important;
-    --c-gold-pale:   #FFFBEB !important;
+    /* Brand */
+    --blue:          #1566C0 !important;
+    --blue-dark:     #0E4F9A !important;
+    --blue-light:    #EAF2FF !important;
+    --blue-mid:      #2979C8 !important;
 
-    /* Neutral Scale */
-    --c-white:       #FFFFFF !important;
-    --c-bg:          #F8FAFC !important;
-    --c-bg-soft:     #F1F5F9 !important;
-    --c-border:      #E2E8F0 !important;
-    --c-border-mid:  #CBD5E1 !important;
-    --c-muted:       #94A3B8 !important;
-    --c-sub:         #64748B !important;
-    --c-text:        #1E293B !important;
+    /* Neutrals */
+    --white:         #FFFFFF !important;
+    --bg:            #F4F7FB !important;
+    --bg-section:    #F8FAFD !important;
+    --surface:       #FFFFFF !important;
+    --border:        #DDE5EF !important;
+    --border-light:  #EDF2F8 !important;
 
-    /* Typography */
-    --font:          'Plus Jakarta Sans', sans-serif !important;
+    /* Text */
+    --text-dark:     #0E1F35 !important;
+    --text-mid:      #2D4363 !important;
+    --text-body:     #4A6080 !important;
+    --text-muted:    #8499B4 !important;
 
-    /* Spacing */
-    --max-width:     1280px !important;
-    --radius-sm:     8px !important;
-    --radius-md:     16px !important;
-    --radius-lg:     24px !important;
-    --radius-xl:     32px !important;
-    --radius-pill:   100px !important;
+    /* Accent */
+    --gold:          #E09500 !important;
+    --gold-bg:       #FFF8E6 !important;
 
-    /* Elevation */
-    --shadow-xs:     0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04) !important;
-    --shadow-sm:     0 4px 12px rgba(15,23,42,0.06), 0 2px 4px rgba(15,23,42,0.04) !important;
-    --shadow-md:     0 8px 24px rgba(15,23,42,0.08), 0 4px 8px rgba(15,23,42,0.04) !important;
-    --shadow-lg:     0 20px 48px rgba(15,23,42,0.12), 0 8px 16px rgba(15,23,42,0.06) !important;
-    --shadow-xl:     0 32px 64px rgba(15,23,42,0.16) !important;
-    --shadow-blue:   0 8px 24px rgba(37,99,235,0.25) !important;
-    --shadow-gold:   0 8px 24px rgba(245,158,11,0.3) !important;
+    /* Fonts */
+    --font-head:     'Nunito Sans', sans-serif !important;
+    --font-body:     'Inter', sans-serif !important;
+
+    /* Layout */
+    --max-w:         1280px !important;
+
+    /* Radii */
+    --r-xs:   6px !important;
+    --r-sm:   10px !important;
+    --r-md:   14px !important;
+    --r-lg:   20px !important;
+    --r-xl:   28px !important;
+    --r-pill: 999px !important;
+
+    /* Shadows */
+    --sh-xs:  0 1px 4px rgba(14,31,53,0.06) !important;
+    --sh-sm:  0 2px 10px rgba(14,31,53,0.07), 0 1px 3px rgba(14,31,53,0.04) !important;
+    --sh-md:  0 6px 20px rgba(14,31,53,0.09), 0 2px 6px rgba(14,31,53,0.05) !important;
+    --sh-lg:  0 12px 36px rgba(14,31,53,0.11), 0 4px 12px rgba(14,31,53,0.06) !important;
+    --sh-xl:  0 24px 56px rgba(14,31,53,0.14), 0 8px 20px rgba(14,31,53,0.07) !important;
+    --sh-blue: 0 6px 20px rgba(21,102,192,0.3) !important;
 
     /* Transitions */
-    --ease:          cubic-bezier(0.4, 0, 0.2, 1) !important;
-    --trans-fast:    all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    --trans-base:    all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    --trans-slow:    all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    --ease:   cubic-bezier(0.4, 0, 0.2, 1) !important;
+    --t-fast: all 0.16s cubic-bezier(0.4,0,0.2,1) !important;
+    --t-base: all 0.26s cubic-bezier(0.4,0,0.2,1) !important;
+    --t-slow: all 0.42s cubic-bezier(0.4,0,0.2,1) !important;
 }
 
 
-/* ============================================================
-   2. GLOBAL RESETS
-   ============================================================ */
+/* ================================================================
+   BASE
+   ================================================================ */
 *, *::before, *::after {
     box-sizing: border-box !important;
 }
 
-body, .cc_limit_width {
-    font-family: var(--font) !important;
-    color: var(--c-text) !important;
+body {
+    font-family: var(--font-body) !important;
+    color: var(--text-body) !important;
+    background: var(--bg) !important;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
 }
 
 
-/* ============================================================
-   3. TYPOGRAPHY SCALE
-   ============================================================ */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font) !important;
-    font-weight: 800 !important;
-    color: var(--c-navy) !important;
-    line-height: 1.15 !important;
-    letter-spacing: -0.03em !important;
-}
-
-h1 { font-size: clamp(40px, 5vw, 64px) !important; }
-h2 { font-size: clamp(28px, 3.5vw, 48px) !important; }
-h3 { font-size: clamp(20px, 2.5vw, 32px) !important; }
-h4 { font-size: 22px !important; font-weight: 700 !important; }
-
-p {
-    font-family: var(--font) !important;
-    color: var(--c-sub) !important;
-    line-height: 1.7 !important;
-    font-size: 16px !important;
-}
-
-a {
-    font-family: var(--font) !important;
-    transition: var(--trans-base) !important;
-}
-
-
-/* ============================================================
-   4. LAYOUT UTILITIES
-   ============================================================ */
-.cc_limit_width {
-    width: 100% !important;
-}
-
-.pagemaker-widget {
-    overflow: hidden !important;
-}
-
-
-/* ============================================================
-   5. HEADER — Top Bar
-   ============================================================ */
+/* ================================================================
+   HEADER — TOP BAR  (matches screenshot: dark bar, phone/email right)
+   ================================================================ */
 .top-bar {
-    background: var(--c-navy) !important;
-    color: var(--c-white) !important;
-    padding: 10px 48px !important;
+    background: var(--text-dark) !important;
+    color: rgba(255,255,255,0.72) !important;
+    padding: 7px 48px !important;
     display: flex !important;
     justify-content: flex-end !important;
-    gap: 28px !important;
-    font-family: var(--font) !important;
-    font-size: 13px !important;
-    font-weight: 500 !important;
+    align-items: center !important;
+    gap: 24px !important;
+    font-family: var(--font-body) !important;
+    font-size: 12.5px !important;
+    font-weight: 400 !important;
     letter-spacing: 0.01em !important;
 }
 
 .top-bar span {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    opacity: 0.85 !important;
-    transition: var(--trans-fast) !important;
+    gap: 6px !important;
+    transition: var(--t-fast) !important;
+    cursor: default !important;
 }
 
 .top-bar span:hover {
-    opacity: 1 !important;
+    color: rgba(255,255,255,0.95) !important;
 }
 
 
-/* ============================================================
-   6. HEADER — Navbar
-   ============================================================ */
+/* ================================================================
+   NAVBAR  (white bar, logo left, nav center, book-now right)
+   ================================================================ */
 .navbar {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     padding: 0 48px !important;
-    height: 72px !important;
-    background: var(--c-white) !important;
-    box-shadow: 0 1px 0 var(--c-border), var(--shadow-sm) !important;
-    font-family: var(--font) !important;
+    height: 68px !important;
+    background: var(--white) !important;
+    box-shadow: 0 1px 0 var(--border), 0 2px 12px rgba(14,31,53,0.06) !important;
+    font-family: var(--font-body) !important;
     position: sticky !important;
     top: 0 !important;
     z-index: 1000 !important;
@@ -164,23 +133,26 @@ a {
 
 /* Logo */
 .logo a {
+    font-family: var(--font-head) !important;
     font-size: 20px !important;
-    font-weight: 800 !important;
-    color: var(--c-navy) !important;
+    font-weight: 900 !important;
+    color: var(--text-dark) !important;
     text-decoration: none !important;
-    letter-spacing: -0.04em !important;
-    text-transform: uppercase !important;
+    letter-spacing: -0.03em !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 2px !important;
 }
 
-/* Nav Menu */
+/* Nav links */
 .menu {
     list-style: none !important;
     display: flex !important;
-    gap: 4px !important;
+    align-items: center !important;
+    gap: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     height: 100% !important;
-    align-items: center !important;
 }
 
 .menu > li {
@@ -191,20 +163,25 @@ a {
 }
 
 .menu > li > a {
+    font-family: var(--font-body) !important;
     text-decoration: none !important;
-    color: var(--c-navy-mid) !important;
+    color: var(--text-mid) !important;
     font-weight: 600 !important;
-    font-size: 15px !important;
+    font-size: 13.5px !important;
     padding: 8px 14px !important;
-    border-radius: var(--radius-sm) !important;
-    transition: var(--trans-fast) !important;
+    border-radius: var(--r-xs) !important;
+    transition: var(--t-fast) !important;
     white-space: nowrap !important;
+    letter-spacing: -0.01em !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
 }
 
 .menu > li > a:hover,
 .menu > li:hover > a {
-    color: var(--c-blue) !important;
-    background: var(--c-blue-pale) !important;
+    color: var(--blue) !important;
+    background: var(--blue-light) !important;
 }
 
 /* Dropdown */
@@ -212,18 +189,18 @@ a {
     position: absolute !important;
     top: calc(100% + 8px) !important;
     left: 0 !important;
-    background: var(--c-white) !important;
-    min-width: 220px !important;
+    background: var(--white) !important;
+    min-width: 200px !important;
     list-style: none !important;
-    padding: 8px !important;
+    padding: 6px !important;
     margin: 0 !important;
-    box-shadow: var(--shadow-lg) !important;
-    border-radius: var(--radius-md) !important;
-    border: 1px solid var(--c-border) !important;
+    box-shadow: var(--sh-xl) !important;
+    border-radius: var(--r-md) !important;
+    border: 1px solid var(--border-light) !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    transform: translateY(8px) !important;
-    transition: var(--trans-base) !important;
+    transform: translateY(6px) !important;
+    transition: var(--t-base) !important;
 }
 
 .menu li:hover .submenu {
@@ -233,154 +210,168 @@ a {
 }
 
 .submenu li a {
-    padding: 10px 16px !important;
-    display: flex !important;
-    align-items: center !important;
+    font-family: var(--font-body) !important;
+    padding: 9px 14px !important;
+    display: block !important;
     text-decoration: none !important;
-    color: var(--c-sub) !important;
-    font-size: 14px !important;
+    color: var(--text-body) !important;
+    font-size: 13.5px !important;
     font-weight: 500 !important;
-    border-radius: var(--radius-sm) !important;
-    transition: var(--trans-fast) !important;
+    border-radius: var(--r-xs) !important;
+    transition: var(--t-fast) !important;
 }
 
 .submenu li a:hover {
-    background: var(--c-bg) !important;
-    color: var(--c-blue) !important;
-    padding-left: 20px !important;
+    background: var(--bg-section) !important;
+    color: var(--blue) !important;
+    padding-left: 18px !important;
 }
 
-/* CTA Button */
+/* Book Now button */
 .btn {
-    background: var(--c-blue) !important;
-    color: var(--c-white) !important;
-    padding: 11px 26px !important;
-    border-radius: var(--radius-pill) !important;
+    font-family: var(--font-body) !important;
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    padding: 10px 22px !important;
+    border-radius: var(--r-pill) !important;
     text-decoration: none !important;
     font-weight: 700 !important;
-    font-size: 14px !important;
-    transition: var(--trans-base) !important;
-    box-shadow: var(--shadow-blue) !important;
-    white-space: nowrap !important;
+    font-size: 13.5px !important;
     letter-spacing: 0.01em !important;
+    transition: var(--t-base) !important;
+    box-shadow: var(--sh-blue) !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
 }
 
 .btn:hover {
-    background: #1D4ED8 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 12px 32px rgba(37,99,235,0.35) !important;
+    background: var(--blue-dark) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 10px 28px rgba(21,102,192,0.38) !important;
 }
 
 
-/* ============================================================
-   7. SECTION HEADINGS
-   ============================================================ */
+/* ================================================================
+   SECTION HEADING  (popularplacesheading)
+   Matches: bold left-aligned title, small uppercase sub-label
+   ================================================================ */
 .cc-widget--content {
-    font-family: var(--font) !important;
-    padding: 72px 0 28px !important;
-    background: var(--c-white) !important;
+    font-family: var(--font-body) !important;
+    padding-top: 56px !important;
+    padding-bottom: 16px !important;
+    background: var(--white) !important;
 }
 
 .textbox {
-    max-width: var(--max-width) !important;
+    max-width: var(--max-w) !important;
     margin: 0 auto !important;
     padding: 0 48px !important;
 }
 
 .textbox h2 {
-    font-size: clamp(32px, 4vw, 52px) !important;
+    font-family: var(--font-head) !important;
+    font-size: clamp(26px, 3vw, 38px) !important;
     font-weight: 800 !important;
-    color: var(--c-navy) !important;
+    color: var(--text-dark) !important;
     margin: 0 !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.04em !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.025em !important;
 }
 
 .textbox p {
-    margin-top: 14px !important;
+    margin-top: 8px !important;
     margin-bottom: 0 !important;
 }
 
 .textbox p span {
-    font-size: 13px !important;
-    color: var(--c-muted) !important;
-    font-weight: 600 !important;
+    font-family: var(--font-body) !important;
+    font-size: 12px !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
 }
 
 .textbox p span::before {
     content: '' !important;
-    width: 32px !important;
+    width: 24px !important;
     height: 2px !important;
-    background: var(--c-blue) !important;
+    background: var(--blue) !important;
     display: inline-block !important;
     border-radius: 2px !important;
-    transition: width 0.4s var(--ease) !important;
+    flex-shrink: 0 !important;
+    transition: width 0.35s var(--ease) !important;
 }
 
 .textbox:hover p span::before {
-    width: 56px !important;
+    width: 40px !important;
 }
 
 
-/* ============================================================
-   8. CRUISE GRID CARDS
-   ============================================================ */
+/* ================================================================
+   CRUISE GRID CARDS  (cruisegrid)
+   Matches screenshot: photo cards with price tag top-left,
+   cruise name + dates bottom-left, 3-column layout
+   ================================================================ */
 .cc-widget--panel {
-    background: var(--c-bg) !important;
-    padding: 20px 0 80px !important;
-    font-family: var(--font) !important;
+    background: var(--white) !important;
+    padding: 8px 0 64px !important;
+    font-family: var(--font-body) !important;
 }
 
 .lp_trip {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 28px !important;
-    max-width: var(--max-width) !important;
-    margin: 0 auto 28px auto !important;
+    gap: 20px !important;
+    max-width: var(--max-w) !important;
+    margin: 0 auto 20px auto !important;
     padding: 0 48px !important;
 }
 
 .lp_trip_box {
     background-size: cover !important;
     background-position: center !important;
-    height: 480px !important;
-    border-radius: var(--radius-xl) !important;
+    height: 240px !important;
+    border-radius: var(--r-lg) !important;
     overflow: hidden !important;
     position: relative !important;
-    transition: var(--trans-slow) !important;
-    box-shadow: var(--shadow-md) !important;
+    transition: var(--t-slow) !important;
+    box-shadow: var(--sh-sm) !important;
+    cursor: pointer !important;
 }
 
+/* Gradient overlay — photo shows top, info readable at bottom */
 .lp_trip_box::before {
     content: '' !important;
     position: absolute !important;
     inset: 0 !important;
     background: linear-gradient(
         180deg,
-        rgba(15,23,42,0.15) 0%,
-        rgba(15,23,42,0) 35%,
-        rgba(15,23,42,0.85) 100%
+        rgba(10,22,40,0.08) 0%,
+        rgba(10,22,40,0.00) 30%,
+        rgba(10,22,40,0.00) 45%,
+        rgba(10,22,40,0.72) 100%
     ) !important;
     z-index: 1 !important;
-    transition: var(--trans-base) !important;
+    transition: var(--t-base) !important;
 }
 
 .lp_trip_box:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: var(--shadow-xl) !important;
+    transform: translateY(-6px) !important;
+    box-shadow: var(--sh-lg) !important;
 }
 
 .lp_trip_box:hover::before {
     background: linear-gradient(
         180deg,
-        rgba(15,23,42,0.1) 0%,
-        rgba(15,23,42,0) 30%,
-        rgba(15,23,42,0.92) 100%
+        rgba(10,22,40,0.05) 0%,
+        rgba(10,22,40,0.00) 35%,
+        rgba(10,22,40,0.00) 45%,
+        rgba(10,22,40,0.80) 100%
     ) !important;
 }
 
@@ -390,105 +381,114 @@ a {
     height: 100% !important;
     width: 100% !important;
     text-decoration: none !important;
-    color: var(--c-white) !important;
+    color: var(--white) !important;
     position: relative !important;
     z-index: 2 !important;
     box-sizing: border-box !important;
 }
 
-/* Price Badge — top-left strip */
+/* Price badge — top-left, matches screenshot style exactly */
 .lp_trip_box .price {
     order: -1 !important;
     position: relative !important;
-    background: var(--c-gold) !important;
-    color: var(--c-navy) !important;
-    padding: 18px 24px 26px !important;
-    font-family: var(--font) !important;
-    font-weight: 700 !important;
+    background: rgba(255,255,255,0.96) !important;
+    color: var(--text-dark) !important;
+    padding: 10px 16px 10px !important;
+    font-family: var(--font-body) !important;
+    font-weight: 500 !important;
     font-size: 11px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.08em !important;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%) !important;
-    transition: background 0.25s ease !important;
-    line-height: 1.4 !important;
+    line-height: 1.35 !important;
+    width: fit-content !important;
+    border-radius: 0 0 var(--r-md) 0 !important;
+    box-shadow: var(--sh-xs) !important;
+    clip-path: none !important;
+    transition: background 0.2s ease !important;
+    letter-spacing: 0.01em !important;
 }
 
 .lp_trip_box .price span {
     display: block !important;
-    font-size: 32px !important;
-    font-weight: 800 !important;
-    line-height: 1 !important;
-    margin: 3px 0 !important;
-    color: var(--c-navy) !important;
+    font-family: var(--font-head) !important;
+    font-size: 22px !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+    margin: 2px 0 0 !important;
+    color: var(--blue) !important;
     letter-spacing: -0.03em !important;
 }
 
 .lp_trip_box:hover .price {
-    background: var(--c-gold-light) !important;
+    background: rgba(255,255,255,1) !important;
 }
 
 /* Cruise line label */
 .lp_trip_box .headline {
     margin-top: auto !important;
-    padding: 0 24px 6px !important;
+    padding: 0 16px 4px !important;
 }
 
 .lp_trip_box .headline span {
-    font-size: 11px !important;
-    font-weight: 700 !important;
-    color: var(--c-gold-light) !important;
+    font-family: var(--font-body) !important;
+    font-size: 10.5px !important;
+    font-weight: 600 !important;
+    color: rgba(255,255,255,0.75) !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.12em !important;
+    letter-spacing: 0.1em !important;
 }
 
-/* Trip name & dates */
+/* Trip name + dates */
 .lp_trip_box .text {
-    padding: 0 24px 28px !important;
+    padding: 0 16px 18px !important;
 }
 
 .lp_trip_box .text div {
-    font-size: 21px !important;
-    font-weight: 700 !important;
+    font-family: var(--font-head) !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
     line-height: 1.25 !important;
-    color: var(--c-white) !important;
-    margin-bottom: 8px !important;
+    color: var(--white) !important;
+    margin-bottom: 5px !important;
     letter-spacing: -0.02em !important;
+    text-shadow: 0 1px 4px rgba(10,22,40,0.5) !important;
 }
 
 .lp_trip_box .period {
-    font-size: 13px !important;
-    color: rgba(255,255,255,0.65) !important;
-    font-weight: 500 !important;
+    font-family: var(--font-body) !important;
+    font-size: 11.5px !important;
+    color: rgba(255,255,255,0.72) !important;
+    font-weight: 400 !important;
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
+    gap: 5px !important;
 }
 
 .lp_trip_box .period::before {
     content: '📅' !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
 }
 
 
-/* ============================================================
-   9. CRUISE LIST CARDS (Search Results)
-   ============================================================ */
+/* ================================================================
+   CRUISE LIST CARDS  (cruuisedeatails)
+   Matches screenshot: horizontal card, photo left,
+   info right, pill badge, price, blue CTA
+   ================================================================ */
 #cc_lay_page {
-    font-family: var(--font) !important;
+    font-family: var(--font-body) !important;
     max-width: 1200px !important;
-    margin: 48px auto !important;
+    margin: 40px auto !important;
     padding: 0 48px !important;
-    background: transparent !important;
+    background-color: transparent !important;
 }
 
 /* Sort bar */
 #cc_lay_sort {
-    margin-bottom: 28px !important;
-    background: var(--c-white) !important;
-    padding: 16px 24px !important;
-    border-radius: var(--radius-md) !important;
-    box-shadow: var(--shadow-sm) !important;
-    border: 1px solid var(--c-border) !important;
+    margin-bottom: 20px !important;
+    background: var(--white) !important;
+    padding: 14px 22px !important;
+    border-radius: var(--r-md) !important;
+    box-shadow: var(--sh-xs) !important;
+    border: 1px solid var(--border-light) !important;
 }
 
 .liste_box_sort {
@@ -498,55 +498,60 @@ a {
 }
 
 .liste_box_01.ng-binding {
-    font-size: 15px !important;
+    font-family: var(--font-body) !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
-    color: var(--c-navy-mid) !important;
+    color: var(--text-dark) !important;
 }
 
 .liste_box_01.ng-binding span {
-    color: var(--c-blue) !important;
-    font-weight: 800 !important;
+    color: var(--blue) !important;
+    font-weight: 700 !important;
 }
 
 #sort {
-    padding: 9px 16px !important;
-    border-radius: var(--radius-sm) !important;
-    border: 1.5px solid var(--c-border) !important;
-    font-family: var(--font) !important;
-    font-size: 14px !important;
-    color: var(--c-sub) !important;
+    font-family: var(--font-body) !important;
+    padding: 8px 14px !important;
+    border-radius: var(--r-xs) !important;
+    border: 1.5px solid var(--border) !important;
+    color: var(--text-body) !important;
+    font-size: 13px !important;
     cursor: pointer !important;
     outline: none !important;
-    transition: var(--trans-fast) !important;
-    background: var(--c-white) !important;
+    transition: var(--t-fast) !important;
+    background: var(--white) !important;
+    font-weight: 500 !important;
 }
 
-#sort:focus, #sort:hover {
-    border-color: var(--c-blue) !important;
+#sort:focus,
+#sort:hover {
+    border-color: var(--blue) !important;
+    box-shadow: 0 0 0 3px rgba(21,102,192,0.1) !important;
 }
 
-/* Result cards */
+/* Card */
 .liste_box {
     display: flex !important;
-    background: var(--c-white) !important;
-    border-radius: var(--radius-lg) !important;
-    margin-bottom: 24px !important;
+    background: var(--white) !important;
+    border-radius: var(--r-lg) !important;
+    margin-bottom: 16px !important;
     overflow: hidden !important;
-    transition: var(--trans-base) !important;
-    box-shadow: var(--shadow-sm) !important;
-    border: 1px solid var(--c-border) !important;
+    transition: var(--t-base) !important;
+    box-shadow: var(--sh-sm) !important;
+    border: 1px solid var(--border-light) !important;
+    position: relative !important;
 }
 
 .liste_box:hover {
-    transform: translateY(-6px) !important;
-    box-shadow: var(--shadow-lg) !important;
-    border-color: var(--c-blue-light) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: var(--sh-lg) !important;
+    border-color: rgba(21,102,192,0.15) !important;
 }
 
 /* Image column */
 .liste_box_01 {
-    width: 300px !important;
-    min-width: 300px !important;
+    width: 280px !important;
+    min-width: 280px !important;
     position: relative !important;
     overflow: hidden !important;
 }
@@ -556,7 +561,7 @@ a {
     height: 100% !important;
     object-fit: cover !important;
     display: block !important;
-    transition: transform 0.6s var(--ease) !important;
+    transition: transform 0.5s var(--ease) !important;
 }
 
 .liste_box:hover .liste_box_01 img[src*="ships/ships"] {
@@ -565,370 +570,402 @@ a {
 
 .liste_box_01 img[src*="ships/logos"] {
     position: absolute !important;
-    top: 16px !important;
-    left: 16px !important;
+    top: 12px !important;
+    left: 12px !important;
     background: rgba(255,255,255,0.97) !important;
-    padding: 8px 12px !important;
-    border-radius: var(--radius-sm) !important;
-    max-width: 90px !important;
-    max-height: 36px !important;
+    padding: 6px 10px !important;
+    border-radius: var(--r-xs) !important;
+    max-width: 84px !important;
+    max-height: 32px !important;
     object-fit: contain !important;
-    box-shadow: var(--shadow-sm) !important;
+    box-shadow: var(--sh-xs) !important;
     z-index: 2 !important;
 }
 
 /* Content column */
 .liste_box_02 {
-    padding: 28px 32px !important;
+    font-family: var(--font-body) !important;
+    padding: 22px 24px !important;
     flex-grow: 1 !important;
     display: flex !important;
     flex-direction: column !important;
     position: relative !important;
 }
 
-/* Nights badge */
+/* Nights pill */
 .liste_box_nights {
+    font-family: var(--font-body) !important;
     display: inline-flex !important;
     align-items: center !important;
-    background: var(--c-blue-pale) !important;
-    color: var(--c-blue) !important;
-    padding: 4px 14px !important;
-    border-radius: var(--radius-pill) !important;
-    font-size: 12px !important;
+    background: var(--blue-light) !important;
+    color: var(--blue) !important;
+    padding: 3px 12px !important;
+    border-radius: var(--r-pill) !important;
+    font-size: 11px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    margin-bottom: 14px !important;
-    letter-spacing: 0.06em !important;
+    margin-bottom: 10px !important;
+    letter-spacing: 0.08em !important;
     width: fit-content !important;
 }
 
-/* Card title */
+/* Card headline */
 .liste_box_headline {
-    margin-bottom: 14px !important;
+    margin-bottom: 10px !important;
 }
 
 .liste_box_headline a {
+    font-family: var(--font-head) !important;
     text-decoration: none !important;
-    color: var(--c-navy) !important;
-    font-size: 20px !important;
-    font-weight: 700 !important;
+    color: var(--text-dark) !important;
+    font-size: 17px !important;
+    font-weight: 800 !important;
     line-height: 1.3 !important;
-    letter-spacing: -0.02em !important;
-    transition: color 0.2s ease !important;
+    letter-spacing: -0.025em !important;
+    transition: color 0.16s ease !important;
 }
 
 .liste_box_headline a:hover {
-    color: var(--c-blue) !important;
+    color: var(--blue) !important;
 }
 
 .liste_box_headline em {
     display: block !important;
     font-style: normal !important;
-    color: var(--c-navy) !important;
+    color: var(--text-dark) !important;
 }
 
-/* Detail text */
+/* Detail rows */
 .liste_box_text {
-    color: var(--c-sub) !important;
-    font-size: 14px !important;
-    line-height: 1.65 !important;
-    margin-bottom: 20px !important;
+    font-family: var(--font-body) !important;
+    color: var(--text-muted) !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 14px !important;
 }
 
 .liste_box_text p {
-    margin: 0 0 4px !important;
-    color: var(--c-sub) !important;
-    font-size: 14px !important;
+    margin: 2px 0 !important;
+    color: var(--text-muted) !important;
+    font-size: 13px !important;
 }
 
-.liste_box_text p strong {
-    color: var(--c-navy-mid) !important;
+.liste_box_text strong {
+    color: var(--text-body) !important;
     font-weight: 600 !important;
 }
 
 /* Price */
 .liste_box_preis {
-    font-size: 14px !important;
-    color: var(--c-sub) !important;
-    margin-bottom: 16px !important;
+    font-family: var(--font-body) !important;
     margin-top: auto !important;
+    font-size: 12.5px !important;
+    color: var(--text-muted) !important;
+    padding-top: 12px !important;
+    border-top: 1px solid var(--border-light) !important;
 }
 
 .liste_box_preis span {
-    font-size: 28px !important;
-    font-weight: 800 !important;
-    color: var(--c-navy) !important;
-    letter-spacing: -0.03em !important;
+    font-family: var(--font-head) !important;
     display: inline-block !important;
+    font-size: 26px !important;
+    font-weight: 900 !important;
+    color: var(--text-dark) !important;
     margin-left: 4px !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
 }
 
-/* See Offers CTA */
+/* CTA */
 .b_forward {
-    display: inline-flex !important;
+    position: absolute !important;
+    bottom: 22px !important;
+    right: 22px !important;
 }
 
 .b_forward a {
+    font-family: var(--font-body) !important;
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    text-decoration: none !important;
+    padding: 10px 20px !important;
+    border-radius: var(--r-pill) !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
     display: inline-flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    background: var(--c-blue) !important;
-    color: var(--c-white) !important;
-    padding: 12px 24px !important;
-    border-radius: var(--radius-pill) !important;
-    font-weight: 700 !important;
-    font-size: 14px !important;
-    text-decoration: none !important;
-    transition: var(--trans-base) !important;
-    box-shadow: var(--shadow-blue) !important;
+    gap: 6px !important;
+    box-shadow: var(--sh-blue) !important;
+    transition: var(--t-base) !important;
+    letter-spacing: 0.01em !important;
 }
 
 .b_forward a:hover {
-    background: #1D4ED8 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 12px 28px rgba(37,99,235,0.35) !important;
+    background: var(--blue-dark) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 10px 28px rgba(21,102,192,0.38) !important;
 }
 
-.b_forward a b {
+.b_forward b {
     font-weight: 700 !important;
 }
 
-.b_forward a i {
+.b_forward i {
     font-style: normal !important;
-    opacity: 0.8 !important;
     font-size: 13px !important;
+    opacity: 0.8 !important;
 }
 
-/* Wishlist button */
-.button_favor a {
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 50% !important;
-    border: 1.5px solid var(--c-border) !important;
+/* Wishlist heart */
+.button_favor {
+    position: absolute !important;
+    top: 22px !important;
+    right: 22px !important;
+}
+
+#favorButton {
     display: flex !important;
+    width: 38px !important;
+    height: 38px !important;
+    background: var(--bg) !important;
+    border-radius: var(--r-sm) !important;
     align-items: center !important;
     justify-content: center !important;
-    transition: var(--trans-fast) !important;
-    background: var(--c-white) !important;
+    text-decoration: none !important;
+    transition: var(--t-base) !important;
+    border: 1.5px solid var(--border) !important;
 }
 
-.button_favor a:hover {
-    border-color: var(--c-blue) !important;
-    background: var(--c-blue-pale) !important;
+#favorButton:hover {
+    background: #FEF2F2 !important;
+    border-color: #FECACA !important;
+    transform: scale(1.08) !important;
+}
+
+#favorButton::before {
+    content: '♥' !important;
+    color: var(--text-muted) !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    transition: color 0.16s ease !important;
+}
+
+#favorButton:hover::before {
+    color: #EF4444 !important;
 }
 
 /* Load more */
+#iframe {
+    text-align: center !important;
+    margin: 36px 0 !important;
+}
+
 #b_forward_iframe a {
+    font-family: var(--font-body) !important;
     display: inline-flex !important;
     align-items: center !important;
     gap: 8px !important;
     background: transparent !important;
-    color: var(--c-blue) !important;
-    border: 2px solid var(--c-blue) !important;
-    padding: 14px 32px !important;
-    border-radius: var(--radius-pill) !important;
-    font-weight: 700 !important;
-    font-size: 15px !important;
+    color: var(--blue) !important;
+    border: 2px solid var(--blue) !important;
     text-decoration: none !important;
-    transition: var(--trans-base) !important;
+    padding: 12px 32px !important;
+    border-radius: var(--r-pill) !important;
+    font-weight: 700 !important;
+    font-size: 13.5px !important;
+    transition: var(--t-base) !important;
 }
 
 #b_forward_iframe a:hover {
-    background: var(--c-blue) !important;
-    color: var(--c-white) !important;
-    box-shadow: var(--shadow-blue) !important;
-}
-
-/* Loader */
-.loader {
-    border: 3px solid var(--c-border) !important;
-    border-top-color: var(--c-blue) !important;
-    border-radius: 50% !important;
-    width: 40px !important;
-    height: 40px !important;
-    animation: spin 0.8s linear infinite !important;
-    margin: 40px auto !important;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    box-shadow: var(--sh-blue) !important;
+    transform: translateY(-1px) !important;
 }
 
 
-/* ============================================================
-   10. SEARCH WIDGET
-   ============================================================ */
+/* ================================================================
+   SEARCH WIDGET  (search.html)
+   Matches screenshot: left panel with dropdowns, blue CTA
+   ================================================================ */
 .lp_ss {
-    font-family: var(--font) !important;
-    background: var(--c-bg) !important;
-    padding: 48px 0 !important;
+    font-family: var(--font-body) !important;
+    background: var(--bg) !important;
+    padding: 0 !important;
 }
 
 .lp_ss_box03 {
-    background: var(--c-white) !important;
-    border-radius: var(--radius-xl) !important;
-    box-shadow: var(--shadow-lg) !important;
-    padding: 40px 48px !important;
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-    border: 1px solid var(--c-border) !important;
+    background: var(--white) !important;
+    border-radius: var(--r-lg) !important;
+    box-shadow: var(--sh-md) !important;
+    padding: 28px 28px !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border: 1px solid var(--border-light) !important;
 }
 
-/* Section heading inside search */
 .lay_01 h2 {
-    font-family: var(--font) !important;
-    font-size: 32px !important;
-    color: var(--c-navy) !important;
-    font-weight: 800 !important;
-    margin-bottom: 32px !important;
-    letter-spacing: -0.03em !important;
-    position: relative !important;
-    padding-bottom: 20px !important;
-    text-align: left !important;
+    font-family: var(--font-head) !important;
+    font-size: 18px !important;
+    color: var(--text-dark) !important;
     text-transform: none !important;
+    letter-spacing: -0.02em !important;
+    font-weight: 800 !important;
+    margin-bottom: 20px !important;
+    text-align: left !important;
+    padding-bottom: 0 !important;
 }
 
 .lay_01 h2::after {
-    content: '' !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 48px !important;
-    height: 3px !important;
-    background: var(--c-blue) !important;
-    border-radius: 2px !important;
+    display: none !important;
 }
 
-/* Search field buttons */
+/* Search field buttons — clean white with border */
 .searchbutton {
-    background: var(--c-white) !important;
-    color: var(--c-navy-mid) !important;
-    border: 1.5px solid var(--c-border) !important;
-    border-radius: var(--radius-sm) !important;
-    height: 52px !important;
-    font-size: 15px !important;
+    font-family: var(--font-body) !important;
+    background: var(--white) !important;
+    color: var(--text-body) !important;
+    border: 1.5px solid var(--border) !important;
+    border-radius: var(--r-sm) !important;
+    height: 46px !important;
+    font-size: 13.5px !important;
     font-weight: 500 !important;
-    font-family: var(--font) !important;
-    padding: 0 16px !important;
-    transition: var(--trans-fast) !important;
+    padding: 0 14px !important;
+    transition: var(--t-fast) !important;
     cursor: pointer !important;
     text-align: left !important;
     width: 100% !important;
     display: flex !important;
     align-items: center !important;
     outline: none !important;
-    box-shadow: var(--shadow-xs) !important;
+    box-shadow: none !important;
 }
 
 .searchbutton:hover,
 .searchbutton:focus {
-    border-color: var(--c-blue-light) !important;
-    background: var(--c-blue-pale) !important;
-    box-shadow: 0 0 0 3px rgba(59,130,246,0.12) !important;
+    border-color: var(--blue) !important;
+    background: var(--blue-light) !important;
+    box-shadow: 0 0 0 3px rgba(21,102,192,0.08) !important;
 }
 
 /* Dropdowns */
 .searchlist {
-    background: var(--c-white) !important;
-    border-radius: var(--radius-md) !important;
-    box-shadow: var(--shadow-lg) !important;
-    border: 1px solid var(--c-border) !important;
-    padding: 20px !important;
-    margin-top: 8px !important;
-    z-index: 1000 !important;
+    background: var(--white) !important;
+    border-radius: var(--r-md) !important;
+    box-shadow: var(--sh-xl) !important;
+    border: 1px solid var(--border-light) !important;
+    padding: 18px !important;
+    margin-top: 6px !important;
+    z-index: 9999 !important;
 }
 
-/* Filter pills inside dropdowns */
+/* Chips inside dropdowns */
 .helperButton {
-    padding: 8px 16px !important;
-    border-radius: var(--radius-pill) !important;
-    border: 1.5px solid var(--c-border-mid) !important;
-    background: transparent !important;
-    color: var(--c-sub) !important;
-    font-family: var(--font) !important;
+    font-family: var(--font-body) !important;
+    padding: 6px 14px !important;
+    border-radius: var(--r-pill) !important;
+    border: 1.5px solid var(--border) !important;
+    background: var(--white) !important;
+    color: var(--text-body) !important;
     font-weight: 600 !important;
-    font-size: 13px !important;
-    transition: var(--trans-fast) !important;
+    font-size: 12.5px !important;
+    transition: var(--t-fast) !important;
     cursor: pointer !important;
-    margin: 4px !important;
+    margin: 3px !important;
 }
 
 .helperButton:hover {
-    background: var(--c-blue) !important;
-    color: var(--c-white) !important;
-    border-color: var(--c-blue) !important;
-    box-shadow: var(--shadow-blue) !important;
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    border-color: var(--blue) !important;
+    box-shadow: var(--sh-blue) !important;
 }
 
-/* Main search CTA */
+/* Big blue search button — matches screenshot exactly */
 .btnSearch {
-    background: var(--c-blue) !important;
-    color: var(--c-white) !important;
-    border-radius: var(--radius-md) !important;
-    height: 60px !important;
-    font-size: 17px !important;
+    font-family: var(--font-body) !important;
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    border-radius: var(--r-md) !important;
+    height: 50px !important;
+    font-size: 15px !important;
     font-weight: 700 !important;
-    font-family: var(--font) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.06em !important;
+    text-transform: none !important;
+    letter-spacing: -0.01em !important;
     width: 100% !important;
     border: none !important;
     cursor: pointer !important;
-    transition: var(--trans-base) !important;
-    box-shadow: var(--shadow-blue) !important;
+    transition: var(--t-base) !important;
+    box-shadow: var(--sh-blue) !important;
+    margin-top: 12px !important;
 }
 
 .btnSearch:hover {
-    background: #1D4ED8 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 12px 32px rgba(37,99,235,0.4) !important;
+    background: var(--blue-dark) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 10px 28px rgba(21,102,192,0.4) !important;
 }
 
-/* Date picker */
-.datepicker--cell.-selected- {
-    background: var(--c-blue) !important;
-    color: var(--c-white) !important;
-    border-radius: var(--radius-sm) !important;
+/* Datepicker */
+.datepicker--cell.-selected-,
+.datepicker--cell.-selected-.-current- {
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    border-radius: var(--r-xs) !important;
 }
 
 .datepicker--cell.-current- {
-    color: var(--c-blue) !important;
+    color: var(--blue) !important;
     font-weight: 700 !important;
 }
 
-.datepicker--cell:hover {
-    background: var(--c-blue-pale) !important;
-    border-radius: var(--radius-sm) !important;
+.datepicker--cell:hover:not(.-selected-) {
+    background: var(--blue-light) !important;
+    border-radius: var(--r-xs) !important;
+    color: var(--blue) !important;
 }
 
-/* Slider inside search */
-.lp_ss_box04 .lp_slider_box {
-    border-radius: var(--radius-lg) !important;
+.datepicker--nav-title,
+.datepicker--nav-action {
+    font-family: var(--font-body) !important;
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+}
+
+/* Search hero slider */
+.lp_ss_box04 {
+    border-radius: var(--r-lg) !important;
     overflow: hidden !important;
+    box-shadow: var(--sh-md) !important;
+}
+
+.lp_ss_box04 .lp_slider_box {
+    border-radius: 0 !important;
 }
 
 
-/* ============================================================
-   11. IMAGE SLIDER (Swiper)
-   ============================================================ */
+/* ================================================================
+   IMAGE SLIDER (Slider.html)
+   ================================================================ */
 .cc-widget--carousel {
-    background: var(--c-white) !important;
-    padding: 24px 0 64px !important;
-    font-family: var(--font) !important;
+    background: var(--white) !important;
+    padding: 16px 0 60px !important;
+    font-family: var(--font-body) !important;
 }
 
 .swiper {
-    padding: 32px 16px 72px !important;
+    padding: 24px 16px 64px !important;
     overflow: visible !important;
 }
 
 .lp_slider_box {
-    height: 460px !important;
+    height: 400px !important;
     background-size: cover !important;
     background-position: center !important;
-    border-radius: var(--radius-xl) !important;
-    box-shadow: var(--shadow-md) !important;
-    transition: var(--trans-slow) !important;
+    border-radius: var(--r-lg) !important;
+    box-shadow: var(--sh-md) !important;
+    transition: var(--t-slow) !important;
     cursor: pointer !important;
     position: relative !important;
     overflow: hidden !important;
@@ -938,49 +975,54 @@ a {
     content: '' !important;
     position: absolute !important;
     inset: 0 !important;
-    background: linear-gradient(to bottom, transparent 55%, rgba(15,23,42,0.55) 100%) !important;
+    background: linear-gradient(to bottom, transparent 55%, rgba(10,22,40,0.45) 100%) !important;
     z-index: 1 !important;
-    transition: opacity 0.3s ease !important;
+    opacity: 0.7 !important;
+    transition: opacity 0.28s ease !important;
 }
 
 .lp_slider_box:hover {
-    transform: translateY(-12px) !important;
-    box-shadow: var(--shadow-xl) !important;
+    transform: translateY(-8px) !important;
+    box-shadow: var(--sh-xl) !important;
+}
+
+.lp_slider_box:hover::before {
+    opacity: 0.45 !important;
 }
 
 .swiper-slide-active .lp_slider_box {
-    transform: scale(1.06) !important;
-    box-shadow: var(--shadow-xl) !important;
+    transform: scale(1.04) !important;
+    box-shadow: var(--sh-xl) !important;
     z-index: 10 !important;
-    outline: 2px solid var(--c-blue) !important;
+    outline: 2px solid var(--blue) !important;
     outline-offset: 4px !important;
 }
 
-/* Navigation arrows */
+/* Swiper nav */
 .swiper-button-next,
 .swiper-button-prev {
-    width: 52px !important;
-    height: 52px !important;
-    background: var(--c-white) !important;
-    color: var(--c-blue) !important;
+    width: 46px !important;
+    height: 46px !important;
+    background: var(--white) !important;
+    color: var(--blue) !important;
     border-radius: 50% !important;
-    box-shadow: var(--shadow-md) !important;
-    transition: var(--trans-base) !important;
-    border: 1px solid var(--c-border) !important;
+    box-shadow: var(--sh-md) !important;
+    transition: var(--t-base) !important;
+    border: 1px solid var(--border) !important;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background: var(--c-blue) !important;
-    color: var(--c-white) !important;
-    transform: scale(1.1) !important;
-    box-shadow: var(--shadow-blue) !important;
-    border-color: var(--c-blue) !important;
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    transform: scale(1.08) !important;
+    box-shadow: var(--sh-blue) !important;
+    border-color: var(--blue) !important;
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 18px !important;
+    font-size: 15px !important;
     font-weight: 900 !important;
 }
 
@@ -990,117 +1032,106 @@ a {
 }
 
 .swiper-pagination-bullet {
-    width: 8px !important;
-    height: 8px !important;
-    background: var(--c-border-mid) !important;
+    width: 7px !important;
+    height: 7px !important;
+    background: var(--border) !important;
     opacity: 1 !important;
-    border-radius: var(--radius-pill) !important;
-    transition: var(--trans-base) !important;
+    border-radius: var(--r-pill) !important;
+    transition: var(--t-base) !important;
     margin: 0 4px !important;
 }
 
 .swiper-pagination-bullet-active {
-    width: 28px !important;
-    background: var(--c-blue) !important;
+    width: 22px !important;
+    background: var(--blue) !important;
 }
 
 
-/* ============================================================
-   12. RESPONSIVE BREAKPOINTS
-   ============================================================ */
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
 @media (max-width: 1100px) {
     .lp_trip {
         grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0 28px !important;
     }
 }
 
 @media (max-width: 1024px) {
-    .navbar {
-        padding: 0 24px !important;
-    }
-    .top-bar {
-        display: none !important;
-    }
-    .menu {
-        gap: 2px !important;
-    }
-    .menu > li > a {
-        font-size: 14px !important;
-        padding: 8px 10px !important;
-    }
-    .textbox {
-        padding: 0 24px !important;
-    }
-    #cc_lay_page {
-        padding: 0 24px !important;
-    }
-    .lp_ss_box03 {
-        padding: 32px 24px !important;
-    }
+    .navbar { padding: 0 24px !important; }
+    .top-bar { padding: 7px 24px !important; }
+    .textbox { padding: 0 28px !important; }
+    .lp_ss_box03 { padding: 24px 20px !important; }
+    #cc_lay_page { padding: 0 24px !important; }
 }
 
 @media (max-width: 768px) {
+    .top-bar { display: none !important; }
+
     .lp_trip {
         grid-template-columns: 1fr !important;
-        padding: 0 20px !important;
+        padding: 0 16px !important;
     }
 
-    .lp_trip_box {
-        height: 420px !important;
-    }
+    .lp_trip_box { height: 220px !important; }
 
-    .cc-widget--panel {
-        padding: 20px 0 48px !important;
-    }
+    .cc-widget--panel { padding: 8px 0 40px !important; }
 
     .cc-widget--content {
-        padding: 48px 0 20px !important;
+        padding-top: 40px !important;
+        padding-bottom: 12px !important;
     }
 
-    .textbox h2 {
-        font-size: 28px !important;
-    }
+    .textbox { padding: 0 16px !important; }
 
-    .liste_box {
-        flex-direction: column !important;
-    }
+    .textbox h2 { font-size: 24px !important; }
+
+    .liste_box { flex-direction: column !important; }
 
     .liste_box_01 {
         width: 100% !important;
         min-width: unset !important;
-        height: 220px !important;
+        height: 200px !important;
     }
 
-    .liste_box_02 {
-        padding: 20px !important;
+    .b_forward {
+        position: static !important;
+        margin-top: 16px !important;
     }
 
-    .lp_slider_box {
-        height: 320px !important;
+    .b_forward a {
+        justify-content: center !important;
+        width: 100% !important;
     }
 
-    .cc-widget--carousel {
-        padding: 16px 0 48px !important;
+    .button_favor {
+        top: auto !important;
+        bottom: 16px !important;
     }
 
-    .swiper {
-        padding: 16px 8px 56px !important;
-    }
+    .liste_box_02 { padding: 16px !important; }
+
+    .lp_slider_box { height: 260px !important; }
+
+    .cc-widget--carousel { padding: 10px 0 48px !important; }
+
+    .navbar { padding: 0 16px !important; height: 60px !important; }
+
+    .menu { display: none !important; }
 }
 
 
-/* ============================================================
-   13. UTILITY CLASSES
-   ============================================================ */
+/* ================================================================
+   UTILITIES
+   ================================================================ */
 .clear { clear: both !important; }
-
 .ng-hide { display: none !important; }
 
-/* Focus visible for accessibility */
 a:focus-visible,
 button:focus-visible {
-    outline: 2px solid var(--c-blue) !important;
+    outline: 2px solid var(--blue) !important;
     outline-offset: 3px !important;
+    border-radius: 3px !important;
 }
     </style>
 
