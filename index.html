@@ -1300,6 +1300,7 @@ button:focus-visible {
     }
 
     #layout {
+        max-width: var(--container-width) !important;
         margin: 40px auto !important;
         padding: 0 20px !important;
     }
@@ -1369,12 +1370,18 @@ button:focus-visible {
     }
 
     /* Summary Box */
-    .liste_box_02 {
-        
-        padding: 40px !important;
+    .page_box {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
         border-radius: var(--border-radius) !important;
-        color: white !important;
         margin-bottom: 40px !important;
+        overflow: hidden !important;
+        box-shadow: var(--shadow-md) !important;
+    }
+
+    .liste_box_02 {
+        background: transparent !important;
+        padding: 40px !important;
+        color: white !important;
         display: grid !important;
         grid-template-columns: auto auto 1fr !important;
         gap: 40px !important;
