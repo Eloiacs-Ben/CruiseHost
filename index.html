@@ -88,171 +88,168 @@ body {
 /* ================================================================
    HEADER — TOP BAR  (matches screenshot: dark bar, phone/email right)
    ================================================================ */
-.top-bar {
-    background: var(--text-dark) !important;
-    color: rgba(255,255,255,0.72) !important;
-    padding: 7px 48px !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    align-items: center !important;
-    gap: 24px !important;
-    font-family: var(--font-body) !important;
-    font-size: 12.5px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0.01em !important;
-}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-.top-bar span {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    transition: var(--t-fast) !important;
-    cursor: default !important;
-}
+    :root {
+        --primary-color: #0F172A !important;
+        --secondary-color: #3B82F6 !important;
+        --accent-color: #FACC15 !important;
+        --text-primary: #1E293B !important;
+        --text-secondary: #64748B !important;
+        --bg-white: #FFFFFF !important;
+        --bg-light: #F8FAF7 !important;
+        --font-main: 'Plus Jakarta Sans', sans-serif !important;
+    }
 
-.top-bar span:hover {
-    color: rgba(255,255,255,0.95) !important;
-}
+    /* Reset & Base */
+    * {
+        box-sizing: border-box !important;
+    }
 
+    .top-bar {
+        background: var(--primary-color) !important;
+        color: var(--bg-white) !important;
+        padding: 10px 40px !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        gap: 25px !important;
+        font-family: var(--font-main) !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+    }
 
-/* ================================================================
-   NAVBAR  (white bar, logo left, nav center, book-now right)
-   ================================================================ */
-.navbar {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 0 48px !important;
-    height: 68px !important;
-    background: var(--white) !important;
-    box-shadow: 0 1px 0 var(--border), 0 2px 12px rgba(14,31,53,0.06) !important;
-    font-family: var(--font-body) !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1000 !important;
-}
+    .top-bar span {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        opacity: 0.9 !important;
+    }
 
-/* Logo */
-.logo a {
-    font-family: var(--font-head) !important;
-    font-size: 20px !important;
-    font-weight: 900 !important;
-    color: var(--text-dark) !important;
-    text-decoration: none !important;
-    letter-spacing: -0.03em !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 2px !important;
-}
+    .navbar {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 20px 40px !important;
+        background: var(--bg-white) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+        font-family: var(--font-main) !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+    }
 
-/* Nav links */
-.menu {
-    list-style: none !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 100% !important;
-}
+    /* Logo */
+    .logo a {
+        display: flex !important;
+        align-items: center !important;
+        text-decoration: none !important;
+    }
 
-.menu > li {
-    position: relative !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-}
+    .logo img {
+        height: 60px !important;
+        width: auto !important;
+        transition: transform 0.3s ease !important;
+    }
 
-.menu > li > a {
-    font-family: var(--font-body) !important;
-    text-decoration: none !important;
-    color: var(--text-mid) !important;
-    font-weight: 600 !important;
-    font-size: 13.5px !important;
-    padding: 8px 14px !important;
-    border-radius: var(--r-xs) !important;
-    transition: var(--t-fast) !important;
-    white-space: nowrap !important;
-    letter-spacing: -0.01em !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-}
+    .logo img:hover {
+        transform: scale(1.05) !important;
+    }
 
-.menu > li > a:hover,
-.menu > li:hover > a {
-    color: var(--blue) !important;
-    background: var(--blue-light) !important;
-}
+    /* Menu */
+    .menu {
+        list-style: none !important;
+        display: flex !important;
+        gap: 35px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 
-/* Dropdown */
-.submenu {
-    position: absolute !important;
-    top: calc(100% + 8px) !important;
-    left: 0 !important;
-    background: var(--white) !important;
-    min-width: 200px !important;
-    list-style: none !important;
-    padding: 6px !important;
-    margin: 0 !important;
-    box-shadow: 0 8px 32px rgba(14,31,53,0.12) !important;
-    border-radius: 0 !important;
-    border: 1px solid var(--border-light) !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    transform: translateY(6px) !important;
-    transition: var(--t-base) !important;
-}
+    .menu>li {
+        position: relative !important;
+        padding: 10px 0 !important;
+    }
 
-.menu li:hover .submenu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
-}
+    .menu>li>a {
+        text-decoration: none !important;
+        color: var(--text-primary) !important;
+        font-weight: 600 !important;
+        font-size: 16px !important;
+        transition: color 0.3s ease !important;
+    }
 
-.submenu li a {
-    font-family: var(--font-body) !important;
-    padding: 9px 14px !important;
-    display: block !important;
-    text-decoration: none !important;
-    color: var(--text-body) !important;
-    font-size: 13.5px !important;
-    font-weight: 500 !important;
-    border-radius: 0 !important;
-    transition: var(--t-fast) !important;
-}
+    .menu>li:hover>a {
+        color: var(--secondary-color) !important;
+    }
 
-.submenu li a:hover {
-    background: var(--bg-section) !important;
-    color: var(--blue) !important;
-    padding-left: 18px !important;
-    border-left: 3px solid var(--blue) !important;
-}
+    /* Submenu */
+    .submenu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        background: var(--bg-white) !important;
+        min-width: 200px !important;
+        list-style: none !important;
+        padding: 15px 0 !important;
+        margin: 0 !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        border-radius: 8px !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(10px) !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid #F1F5F9 !important;
+    }
 
-/* Book Now button */
-.btn {
-    font-family: var(--font-body) !important;
-    background: var(--blue) !important;
-    color: var(--white) !important;
-    padding: 10px 22px !important;
-    border-radius: 0 !important;
-    text-decoration: none !important;
-    font-weight: 700 !important;
-    font-size: 13.5px !important;
-    letter-spacing: 0.01em !important;
-    transition: var(--t-fast) !important;
-    box-shadow: none !important;
-    white-space: nowrap !important;
-    display: inline-flex !important;
-    align-items: center !important;
-}
+    .menu li:hover .submenu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
 
-.btn:hover {
-    background: var(--blue-dark) !important;
-    transform: none !important;
-    box-shadow: none !important;
-}
+    .submenu li a {
+        padding: 10px 25px !important;
+        display: block !important;
+        text-decoration: none !important;
+        color: var(--text-secondary) !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        transition: all 0.2s ease !important;
+    }
 
+    .submenu li a:hover {
+        background: var(--bg-light) !important;
+        color: var(--secondary-color) !important;
+        padding-left: 30px !important;
+    }
+
+    /* Button */
+    .btn {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #2563EB 100%) !important;
+        color: var(--bg-white) !important;
+        padding: 12px 28px !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
+        filter: brightness(1.1) !important;
+    }
+
+    @media (max-width: 1024px) {
+        .menu {
+            gap: 20px !important;
+        }
+
+        .top-bar {
+            display: none !important;
+        }
+    }
 
 /* ================================================================
    SECTION HEADING  (popularplacesheading)
