@@ -2092,11 +2092,24 @@ button:focus-visible {
 </div>
 
 <script>
-    document.title = "MakeYourCruise | Best Online Cruise Deals";
+document.title = "MakeYourCruise | Best Online Cruise Deals";
 
-    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-    link.type = 'image/png';
-    link.rel = 'icon';
-    link.href = 'https://makeyourcruise.com/assets/myc_logo-Dx90J5Ea.png';
-    document.head.appendChild(link);
+// Function to update or create meta tags
+function updateMeta(property, content) {
+  let meta = document.querySelector(`meta[property="${property}"]`);
+
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.setAttribute("property", property);
+    document.head.appendChild(meta);
+  }
+
+  meta.setAttribute("content", content);
+}
+
+// Update Open Graph tags
+updateMeta("og:title", "Make Your Cruise | Best Online Cruise deals");
+updateMeta("og:description", "Book amazing cruise experiences online.");
+updateMeta("og:url", "https://book.makeyourcruise.com/start");
+updateMeta("og:image", "https://yourwebsite.com/image.jpg");
 </script>
