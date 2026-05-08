@@ -2093,57 +2093,63 @@ button:focus-visible {
 
 <script>
 (function () {
+  const TITLE = "Make Your Cruise | Best Online Cruise Deals";
+  const DESCRIPTION = "Find the best online cruise deals and luxury cruise packages with Make Your Cruise.";
 
-  // Change browser title
-  document.title = "Make Your Cruise | Best Online Cruise Deals";
-
-  // Helper function
   function updateMeta(property, content, isProperty = false) {
     let selector = isProperty
       ? `meta[property="${property}"]`
       : `meta[name="${property}"]`;
-
     let meta = document.querySelector(selector);
-
     if (!meta) {
       meta = document.createElement("meta");
-
       if (isProperty) {
         meta.setAttribute("property", property);
       } else {
         meta.setAttribute("name", property);
       }
-
       document.head.appendChild(meta);
     }
-
     meta.setAttribute("content", content);
   }
 
-  // Standard SEO
-  updateMeta(
-    "description",
-    "Find the best online cruise deals and luxury cruise packages with Make Your Cruise."
-  );
+  function applyAll() {
+    document.title = TITLE;
+    updateMeta("description", DESCRIPTION);
+    updateMeta("og:title", TITLE, true);
+    updateMeta("og:description", DESCRIPTION, true);
+    updateMeta("og:type", "website", true);
+  }
 
-  // Open Graph (WhatsApp/Facebook)
-  updateMeta(
-    "og:title",
-    "Make Your Cruise | Best Online Cruise Deals",
-    true
-  );
+  // Run immediately
+  applyAll();
 
-  updateMeta(
-    "og:description",
-    "Find the best online cruise deals and luxury cruise packages with Make Your Cruise.",
-    true
-  );
+  // Run again after DOM is ready
+  document.addEventListener("DOMContentLoaded", applyAll);
 
-  updateMeta(
-    "og:type",
-    "website",
-    true
-  );
+  // Run again after full page load
+  window.addEventListener("load", applyAll);
+
+  // Keep watching for AngularJS or dynamic overwrites
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      // If title was changed by the platform, revert it
+      if (document.title !== TITLE) {
+        applyAll();
+      }
+    });
+  });
+
+  // Watch the <head> for any changes
+  observer.observe(document.head, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    characterData: true,
+  });
+
+  // Also poll every second as a fallback (AngularJS routing can be tricky)
+  setInterval(applyAll, 1000);
 
 })();
 </script>
