@@ -2092,45 +2092,58 @@ button:focus-visible {
 </div>
 
 <script>
-// Update page title
-document.title = "Make Your Cruise | Best Online Cruise deals";
+(function () {
 
-// Function to create or update meta tags
-function setMeta(selector, attrName, attrValue, content) {
-  let meta = document.querySelector(selector);
+  // Change browser title
+  document.title = "Make Your Cruise | Best Online Cruise Deals";
 
-  if (!meta) {
-    meta = document.createElement("meta");
-    meta.setAttribute(attrName, attrValue);
-    document.head.appendChild(meta);
+  // Helper function
+  function updateMeta(property, content, isProperty = false) {
+    let selector = isProperty
+      ? `meta[property="${property}"]`
+      : `meta[name="${property}"]`;
+
+    let meta = document.querySelector(selector);
+
+    if (!meta) {
+      meta = document.createElement("meta");
+
+      if (isProperty) {
+        meta.setAttribute("property", property);
+      } else {
+        meta.setAttribute("name", property);
+      }
+
+      document.head.appendChild(meta);
+    }
+
+    meta.setAttribute("content", content);
   }
 
-  meta.setAttribute("content", content);
-}
+  // Standard SEO
+  updateMeta(
+    "description",
+    "Find the best online cruise deals and luxury cruise packages with Make Your Cruise."
+  );
 
-// Open Graph tags
-setMeta(
-  'meta[property="og:title"]',
-  "property",
-  "og:title",
-  "Make Your Cruise | Cruise Booking Platform"
-);
+  // Open Graph (WhatsApp/Facebook)
+  updateMeta(
+    "og:title",
+    "Make Your Cruise | Best Online Cruise Deals",
+    true
+  );
 
-setMeta(
-  'meta[property="og:description"]',
-  "property",
-  "og:description",
-  "Book amazing cruise experiences online."
-);
+  updateMeta(
+    "og:description",
+    "Find the best online cruise deals and luxury cruise packages with Make Your Cruise.",
+    true
+  );
 
-setMeta(
-  'meta[property="og:url"]',
-  "property",
-  "og:url",
-  "https://book.makeyourcruise.com/start"
-);
+  updateMeta(
+    "og:type",
+    "website",
+    true
+  );
 
-
-
-
+})();
 </script>
